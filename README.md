@@ -110,3 +110,28 @@ Otros puntos a revisar:
 [![Star History Chart](https://api.star-history.com/svg?repos=hazur84/OptiPlex-7050-OpenCore&type=Date)](https://star-history.com/#hazur84/OptiPlex-7050-OpenCore&Date)
 
 Si esta EFI te sirvió, deja una ⭐ en el repositorio.
+
+## Scripts
+
+En [`scripts/`](scripts) hay dos herramientas para macOS (bash, sin dependencias). **Haz un respaldo de tu EFI antes de usarlas.**
+
+### `mapear.sh`: reporte del equipo y mapa USB
+
+Genera un reporte (PCI, gráficas, audio, kexts, ACPI), crea `USBMap.kext`, lo copia a la EFI desde la que arrancó OpenCore y ajusta el `config.plist` (activa USBMap, desactiva USBPorts y quita `XhciPortLimit`), con respaldo del config anterior.
+
+1. Arranca con `XhciPortLimit = true` y sin otro mapa USB activo.
+2. Ejecuta `bash scripts/mapear.sh` y elige **a** (automático, todos los puertos del ACPI) o **g** (guiado, probando cada puerto con una memoria USB 3.0 y otra USB 2.0).
+3. Reinicia. Si algo falla, restaura `EFI/OC/config.plist.antes-usbmap-<fecha>`.
+
+El reporte se guarda en `Reportes/<fecha>` junto al script y en `Reportes-OptiPlex/` de la EFI. No guarda seriales, UUID ni MAC; aun así, revísalo antes de compartirlo.
+
+### `probar_layouts.sh`: elegir el layout de audio (ALC255)
+
+Prueba uno por uno los `layout-id` de AppleALC: pone `alcid=N`, **reinicia solo**, mide si cargó AppleHDA y pasa al siguiente. Al final deja el mejor en el `config.plist` y restaura los `boot-args`.
+
+    bash scripts/probar_layouts.sh            # empezar (rápido ≈ 25 min, completo ≈ 1 h)
+    bash scripts/probar_layouts.sh estado     # ver cómo va
+    bash scripts/probar_layouts.sh cancelar   # detener y dejar todo como estaba
+    bash scripts/probar_layouts.sh fijar 27   # poner un layout a mano
+
+Mientras corre instala un LaunchDaemon temporal (`/Library/LaunchDaemons/mx.optiplex.probarlayouts.plist`) que se borra al terminar. Para abortar desde el arranque: **Reset NVRAM** en el selector de OpenCore. En este equipo el mejor resultado fue el layout **27**.

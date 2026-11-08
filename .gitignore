@@ -5,3 +5,7 @@
 .fseventsd/
 config.plist.antes-*
 *.bak
+Reportes/
+Reportes-OptiPlex/
+actualizacion/
+*.zip

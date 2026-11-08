@@ -7,7 +7,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>Mapa USB OptiPlex 7050 SFF: 10 HS + 5 SS = 15 líneas (7-nov-2026)</string>
 	<key>CFBundleIdentifier</key>
-	<string>mx.protegetuinvento.optiplex7050.USBMap</string>
+	<string>com.hazur84.optiplex7050.USBMap</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
