@@ -2,8 +2,6 @@
 
 [![Stars](https://img.shields.io/github/stars/hazur84/OptiPlex-7050-OpenCore?style=flat&logo=github)](https://github.com/hazur84/OptiPlex-7050-OpenCore/stargazers) [![Descargas](https://img.shields.io/github/downloads/hazur84/OptiPlex-7050-OpenCore/total?style=flat&logo=github&label=descargas)](https://github.com/hazur84/OptiPlex-7050-OpenCore/releases) [![OpenCore](https://img.shields.io/badge/OpenCore-1.0.8-blue?style=flat)](https://github.com/acidanthera/OpenCorePkg)
 
-[![Stars](https://img.shields.io/github/stars/hazur84/OptiPlex-7050-OpenCore?style=flat&logo=github)](https://github.com/hazur84/OptiPlex-7050-OpenCore/stargazers) [![Descargas](https://img.shields.io/github/downloads/hazur84/OptiPlex-7050-OpenCore/total?style=flat&logo=github&label=descargas)](https://github.com/hazur84/OptiPlex-7050-OpenCore/releases) [![OpenCore](https://img.shields.io/badge/OpenCore-1.0.8-blue?style=flat)](https://github.com/acidanthera/OpenCorePkg)
-
 EFI de OpenCore para Dell OptiPlex 7050 SFF (Kaby Lake) con macOS Ventura 13.7.8.
 
 > ⚠️ **Antes de usarla genera tu propio SMBIOS.** Los campos `MLB`, `ROM`, `SystemSerialNumber` y `SystemUUID` están vacíos a propósito (ver [SMBIOS](#smbios)).
@@ -90,15 +88,9 @@ El OptiPlex 7050 tiene **CFG Lock** activo y no se puede quitar desde la BIOS, p
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/): guía de instalación
 - [CorpNewt](https://github.com/corpnewt): GenSMBIOS
 
-## Historial de estrellas
-
-[![Star History Chart](https://api.star-history.com/svg?repos=hazur84/OptiPlex-7050-OpenCore&type=Date)](https://star-history.com/#hazur84/OptiPlex-7050-OpenCore&Date)
-
-Si esta EFI te sirvió, deja una ⭐ en el repositorio.
-
 ## Compatibilidad con macOS Sonoma (14) y Sequoia (15)
 
-Esta EFI está probada en **macOS Ventura (13)**, pero también puede servir para **Sonoma** y **Sequoia**: el Intel HD 630 (Kaby Lake) sigue teniendo soporte de gráficos en ambas versiones.
+Esta EFI está probada en **macOS Ventura (13)**, pero también puede servir para **Sonoma** y **Sequoia**: el Intel HD 630 (Kaby Lake) y la AMD RX 550 (Polaris) siguen teniendo soporte de gráficos en ambas versiones.
 
 Apple quitó el modelo **iMac18,1** de la lista de compatibles a partir de Sonoma. Para instalar o actualizar elige **una** de estas opciones:
 
@@ -107,7 +99,7 @@ Apple quitó el modelo **iMac18,1** de la lista de compatibles a partir de Sonom
 
 Otros puntos a revisar:
 
-- **Wi-Fi / Bluetooth:** usa la versión de los kexts que corresponda a la versión de macOS (por ejemplo, AirportItlwm tiene una versión específica para cada sistema).
+- **Wi-Fi (Broadcom BCM4360):** Apple eliminó los drivers de Wi-Fi Broadcom a partir de Sonoma, así que el Wi-Fi deja de funcionar. Para recuperarlo hacen falta los parches de raíz de [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher), con SIP parcialmente desactivado y AMFIPass.kext. El Ethernet (IntelMausi) y el Bluetooth siguen funcionando.
 - **Kexts y OpenCore:** actualiza Lilu, WhateverGreen, AppleALC, VirtualSMC y OpenCore a sus últimas versiones antes de actualizar macOS.
 - **Respaldo:** haz una copia de la EFI que funciona y pruébala desde una USB antes de cambiar la del disco.
 
