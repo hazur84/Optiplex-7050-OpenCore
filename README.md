@@ -93,3 +93,20 @@ El OptiPlex 7050 tiene **CFG Lock** activo y no se puede quitar desde la BIOS, p
 [![Star History Chart](https://api.star-history.com/svg?repos=hazur84/OptiPlex-7050-OpenCore&type=Date)](https://star-history.com/#hazur84/OptiPlex-7050-OpenCore&Date)
 
 Si esta EFI te sirvió, deja una ⭐ en el repositorio.
+
+## Compatibilidad con macOS Sonoma (14) y Sequoia (15)
+
+Esta EFI está probada en **macOS Ventura (13)**, pero también puede servir para **Sonoma** y **Sequoia**: el Intel HD 630 (Kaby Lake) sigue teniendo soporte de gráficos en ambas versiones.
+
+Apple quitó el modelo **iMac18,1** de la lista de compatibles a partir de Sonoma. Para instalar o actualizar elige **una** de estas opciones:
+
+1. **Opción recomendada:** conservar `iMac18,1` y añadir a `boot-args` la opción `revpatch=sbvmm`, para lo cual hace falta **RestrictEvents.kext**. Así Actualización de software ofrece Sonoma y Sequoia. Si el instalador sigue rechazando el equipo, añade también `-no_compat_check`.
+2. Cambiar el SMBIOS a **iMac19,1** con GenSMBIOS. Genera seriales nuevos y no reutilices los de otro equipo.
+
+Otros puntos a revisar:
+
+- **Wi-Fi / Bluetooth:** usa la versión de los kexts que corresponda a la versión de macOS (por ejemplo, AirportItlwm tiene una versión específica para cada sistema).
+- **Kexts y OpenCore:** actualiza Lilu, WhateverGreen, AppleALC, VirtualSMC y OpenCore a sus últimas versiones antes de actualizar macOS.
+- **Respaldo:** haz una copia de la EFI que funciona y pruébala desde una USB antes de cambiar la del disco.
+
+> ⚠️ La configuración para Sonoma y Sequoia no se ha probado en este equipo. Si la pruebas, abre un *issue* para comentar el resultado.
