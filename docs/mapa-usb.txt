@@ -1,0 +1,35 @@
+Mapa USB — 20261107-195634
+  #   tipo           USB2    USB3    detectado con
+  1   USB 2.0        HS03    -       Dell AC511 USB SoundBar (al inicio)
+  2   USB 2.0        HS09    -       Dell Universal Receiver (al inicio)
+  3   USB 3 tipo A   -       SS01    DataTraveler 3.0 (al inicio)
+  4   USB 2.0        HS08    -       Dell Universal Receiver
+  5   USB 2.0        HS06    -       Dell Universal Receiver
+  6   USB 2.0        HS04    -       Dell Universal Receiver
+  7   USB 2.0        HS05    -       Dell Universal Receiver
+  8   USB 2.0        HS07    -       Dell Universal Receiver
+  9   USB 2.0        HS10    -       Dell Universal Receiver
+  10  USB 2.0        HS02    -       USB2.1 Hub
+  11  USB-C          -       SS08    USB3.1 Hub
+
+C|XHC@14000000|AppleUSBXHCISPT
+D|XHC@14000000/HS03|Dell AC511 USB SoundBar
+D|XHC@14000000/HS10|Dell Universal Receiver
+D|XHC@14000000/SS01|DataTraveler 3.0
+P|XHC@14000000|HS01|AppleUSB20XHCIPort|01000000|255
+P|XHC@14000000|HS02|AppleUSB20XHCIPort|02000000|10
+P|XHC@14000000|HS03|AppleUSB20XHCIPort|03000000|255
+P|XHC@14000000|HS04|AppleUSB20XHCIPort|04000000|255
+P|XHC@14000000|HS05|AppleUSB20XHCIPort|05000000|255
+P|XHC@14000000|HS06|AppleUSB20XHCIPort|06000000|255
+P|XHC@14000000|HS07|AppleUSB20XHCIPort|07000000|255
+P|XHC@14000000|HS08|AppleUSB20XHCIPort|08000000|255
+P|XHC@14000000|HS09|AppleUSB20XHCIPort|09000000|255
+P|XHC@14000000|HS10|AppleUSB20XHCIPort|0a000000|255
+P|XHC@14000000|SS01|AppleUSB30XHCIPort|11000000|255
+P|XHC@14000000|SS03|AppleUSB30XHCIPort|13000000|255
+P|XHC@14000000|SS04|AppleUSB30XHCIPort|14000000|255
+P|XHC@14000000|SS05|AppleUSB30XHCIPort|15000000|255
+P|XHC@14000000|SS06|AppleUSB30XHCIPort|16000000|255
+P|XHC@14000000|SS07|AppleUSB30XHCIPort|17000000|10
+P|XHC@14000000|SS08|AppleUSB30XHCIPort|18000000|10

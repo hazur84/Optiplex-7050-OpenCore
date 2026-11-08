@@ -1,0 +1,19 @@
+MCHC@0	<"pci1028,7a1","pci8086,591f","pciclass,060000","MCHC">	"0:0:0"	
+PEG0@1	<"pci7f,0","pci8086,1901","pciclass,060400","PEG0">	"0:1:0(1:1)"	
+GFX0@0	<"pci1002,b04","pci1002,699f","pciclass,030000","PEGP","GFX0">	"1:0:0"	<"Radeon RX 550">
+HDAU@0,1	<"pci1002,aae0","pciclass,040300","HDAU">	"1:0:1"	
+IGPU@2	<"pci1028,7a1","pci8086,5912","pciclass,030000","GFX0","IGPU">	"0:2:0"	<"Intel HD Graphics 630">
+XHC@14	<"pci1028,7a1","pci8086,a2af","pciclass,0c0330","XHC">	"0:20:0"	
+pci8086,a2b1@14,2	<"pci1028,7a1","pci8086,a2b1","pciclass,118000">	"0:20:2"	
+pci8086,a2e0@15	<"pci1028,7a1","pci8086,a2e0","pciclass,118000">	"0:21:0"	
+IMEI@16	<"pci1028,7a1","pci8086,a2ba","pciclass,078000","HECI","IMEI">	"0:22:0"	
+SATA@17	<"pci1028,7a1","pci8086,a282","pciclass,010601","SATA">	"0:23:0"	
+RP17@1B	<"pci8086,a2e7","pciclass,060400","RP17">	"0:27:0(2:2)"	
+PXSX@0	<"pci1e0f,1","pciclass,010802","PXSX">	"2:0:0"	
+RP09@1D	<"pci8086,a298","pciclass,060400","RP09">	"0:29:0(3:3)"	
+PXSX@0	<"pci106b,117","pci14e4,43a0","pciclass,028000","PXSX">	"3:0:0"	
+LPCB@1F	<"pci1028,7a1","pci8086,a2c6","pciclass,060100","LPCB">	"0:31:0"	
+PPMC@1F,2	<"pci1028,7a1","pci8086,a2a1","pciclass,058000","PPMC">	"0:31:2"	
+HDEF@1F,3	<"pci1028,7a1","pci8086,a2f0","pciclass,040300","HDAS","HDEF">	"0:31:3"	<"Realtek ALC 255 Audio Controller">
+SBUS@1F,4	<"pci1028,7a1","pci8086,a2a3","pciclass,0c0500","SBUS">	"0:31:4"	
+GLAN@1F,6	<"pci1028,7a1","pci8086,15e3","pciclass,020000","GLAN">	"0:31:6"	
